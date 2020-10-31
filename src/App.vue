@@ -1,32 +1,35 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div id="app" class="bg-gray-300">
+    <Navbar />
     <router-view/>
+    <Footer/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<script>
+import Navbar from "./components/NavBar";
+import Footer from "./components/Footer";
+export default {
+  name: "Appvue",
+  components: {
+    Navbar,
+    Footer,
+  },
+  data() {
+    return {
+      tabs: [
+        { icon: "fas fa-home", title: "Kategory", id: "kategory" },
+        { icon: "fas fa-hashtag", title: "Lokasi", id: "lokasi" },
+        { icon: "far fa-bell", title: "Harga", id: "harga" },
+        { icon: "far fa-envelope", title: "Pengiriman", id: "pegiriman" },
+        { icon: "far fa-bookmark", title: "Penawaran", id: "penawaran" },
+        { icon: "fas fa-clipboard-list", title: "Warna", id: "warna" },
+        { icon: "far fa-user", title: "Kondisi", id: "kondisi" },
+        { icon: "far fa-user", title: "Rating", id: "rating" },
+      ],
+      id: "home",
+    };
+  },
+};
+</script>
+<style></style>
